@@ -57,10 +57,10 @@
       font-size: 0.9rem; font-weight: 600;
       padding: 11px 26px; border-radius: 100px;
       text-decoration: none; letter-spacing: 0.02em;
-      transition: all 0.2s;
+      transition: all 0.25s ease;
       box-shadow: 0 4px 20px rgba(232,98,42,0.4);
     }
-    .nav-btn:hover { background: #c44d18; transform: translateY(-1px); }
+    .nav-btn:hover { background: #c44d18; transform: translateY(-2px) scale(1.03); box-shadow: 0 12px 32px rgba(232,98,42,0.45); }
 
     /* ── HERO ── */
     .hero-light {
@@ -80,6 +80,16 @@
       background:
         radial-gradient(ellipse 80% 60% at 110% 50%, rgba(232,98,42,0.08) 0%, transparent 60%),
         radial-gradient(ellipse 50% 80% at -10% 80%, rgba(201,168,76,0.04) 0%, transparent 50%);
+    }
+    .hero-glow {
+      position: absolute;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(232,98,42,0.12) 0%, transparent 70%);
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      transition: left 0.08s ease, top 0.08s ease;
+      z-index: 0;
     }
     .hero-grid-bg {
       position: absolute; inset: 0;
@@ -137,9 +147,9 @@
       padding: 16px 36px; border-radius: 100px;
       text-decoration: none;
       box-shadow: 0 8px 32px rgba(232,98,42,0.45);
-      transition: all 0.2s;
+      transition: all 0.25s ease;
     }
-    .btn-primary:hover { background: #c44d18; transform: translateY(-2px); box-shadow: 0 12px 40px rgba(232,98,42,0.55); }
+    .btn-primary:hover { background: #c44d18; transform: translateY(-2px) scale(1.03); box-shadow: 0 12px 32px rgba(232,98,42,0.45); }
     .btn-ghost {
       display: inline-flex; align-items: center; gap: 8px;
       color: rgba(255,255,255,0.6); font-size: 0.9rem; font-weight: 400;
@@ -232,6 +242,12 @@
       border: 1px solid var(--border);
       border-radius: 16px; padding: 28px 24px;
       position: relative; overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+    .problem-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 32px rgba(232,98,42,0.15);
+      border-color: rgba(232,98,42,0.4);
     }
     .problem-card::before {
       content: '';
@@ -266,6 +282,13 @@
       background: var(--off);
       padding: 48px 40px;
       position: relative;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      border: 1px solid transparent;
+    }
+    .how-step:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 32px rgba(232,98,42,0.15);
+      border-color: rgba(232,98,42,0.4);
     }
     .how-step-num {
       font-family: 'Bebas Neue', sans-serif;
@@ -391,7 +414,16 @@
       padding: 48px 36px;
       transition: background 0.2s;
     }
+    .feature-card {
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background 0.2s;
+      border: 1px solid transparent;
+    }
     .feature:hover { background: var(--bg2); }
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 32px rgba(232,98,42,0.15);
+      border-color: rgba(232,98,42,0.4);
+    }
     .feature-icon {
       font-size: 2rem; margin-bottom: 20px; display: block;
     }
@@ -491,6 +523,7 @@
     .faq-item {
       border-bottom: 1px solid var(--border);
       padding: 28px 0;
+      cursor: pointer;
     }
     .faq-q {
       font-size: 1rem; font-weight: 500; cursor: pointer;
@@ -510,6 +543,16 @@
       transition: max-height 0.3s ease, padding-top 0.3s;
     }
     .faq-item.open .faq-a { max-height: 200px; padding-top: 16px; }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
     /* ── FOOTER ── */
     footer {
@@ -565,6 +608,7 @@
   </style>
 </head>
 <body>
+<div id="progress-bar" style="position:fixed;top:0;left:0;height:3px;width:0%;background:var(--accent);z-index:9999;transition:width 0.1s linear;"></div>
 
 <!-- NAV -->
 <nav>
@@ -574,6 +618,7 @@
 
 <!-- HERO -->
 <section class="hero">
+  <div class="hero-glow" id="hero-glow"></div>
   <div class="hero-grid-bg"></div>
   <div class="hero-tag">Voor batterijverkopers</div>
   <h1 class="hero-title">
@@ -595,11 +640,11 @@
 
   <div class="hero-stats">
     <div class="hero-stat">
-      <div class="hero-stat-num orange">€440</div>
+      <div class="hero-stat-num orange count-num" data-target="440">€440</div>
       <div class="hero-stat-label">gemiddelde extra jaarkost<br>door wegvallen saldering</div>
     </div>
     <div class="hero-stat">
-      <div class="hero-stat-num">2027</div>
+      <div class="hero-stat-num count-num" data-target="2027">2027</div>
       <div class="hero-stat-label">volledige afbouw<br>salderingsregeling NL</div>
     </div>
     <div class="hero-stat">
@@ -636,26 +681,26 @@
   <div class="problem-inner">
     <div>
       <div class="section-overline">Het probleem</div>
-      <h2 class="section-title">UW PROSPECT WEET NIET WAT HEM TE WACHTEN STAAT</h2>
+      <h2 class="section-title reveal">UW PROSPECT WEET NIET WAT HEM TE WACHTEN STAAT</h2>
       <div class="section-body">
         <p>Vanaf 2027 verdwijnt de salderingsregeling volledig. Huishoudens met zonnepanelen gaan <strong>honderden euro's meer betalen</strong> — tenzij ze een batterij hebben.</p>
         <p>Als verkoper weet u dit. Maar zonder concrete cijfers voor die specifieke klant blijft het abstract. Eco Metric maakt het tastbaar: in 5 minuten een volledige analyse, ter plekke in het gesprek.</p>
       </div>
     </div>
     <div class="problem-cards">
-      <div class="problem-card">
+      <div class="problem-card reveal">
         <div class="problem-card-num">€440</div>
         <div class="problem-card-label">gemiddelde extra jaarkost zonder batterij na 2027</div>
       </div>
-      <div class="problem-card">
+      <div class="problem-card reveal">
         <div class="problem-card-num">2027</div>
         <div class="problem-card-label">volledige afbouw salderingsregeling Nederland</div>
       </div>
-      <div class="problem-card">
+      <div class="problem-card reveal">
         <div class="problem-card-num">3x</div>
         <div class="problem-card-label">tarieftypen vergeleken: enkel, dag/nacht, dynamisch</div>
       </div>
-      <div class="problem-card">
+      <div class="problem-card reveal">
         <div class="problem-card-num">5 min</div>
         <div class="problem-card-label">voor een complete analyse op maat in het gesprek</div>
       </div>
@@ -668,22 +713,22 @@
   <div class="how-inner">
     <div class="how-header">
       <div class="section-overline">Hoe het werkt</div>
-      <h2 class="section-title" style="color:var(--bg);">DRIE STAPPEN. EEN OVERTUIGEND GESPREK.</h2>
+      <h2 class="section-title reveal" style="color:var(--bg);">DRIE STAPPEN. EEN OVERTUIGEND GESPREK.</h2>
     </div>
     <div class="how-steps">
-      <div class="how-step">
+      <div class="how-step reveal">
         <div class="how-step-num">01</div>
         <div class="how-step-icon">📋</div>
         <div class="how-step-title">KLANTDATA INVOEREN</div>
         <p class="how-step-desc">Jaarverbruik, opwek en teruglevering van de jaarafrekening. Warmtepomp of EV? Gewoon aanvinken. In minder dan 2 minuten klaar.</p>
       </div>
-      <div class="how-step">
+      <div class="how-step reveal">
         <div class="how-step-num">02</div>
         <div class="how-step-icon">🔋</div>
         <div class="how-step-title">BATTERIJ CONFIGUREREN</div>
         <p class="how-step-desc">Kies capaciteit, vermogen en investering. De tool berekent direct de exacte besparing per jaar voor deze specifieke klant.</p>
       </div>
-      <div class="how-step">
+      <div class="how-step reveal">
         <div class="how-step-num">03</div>
         <div class="how-step-icon">📊</div>
         <div class="how-step-title">RESULTAAT TONEN</div>
@@ -698,7 +743,7 @@
   <div class="mockup-inner">
     <div>
       <div class="section-overline">De tool in actie</div>
-      <h2 class="section-title">ZO ZIET EEN KLANT HET IN HET GESPREK</h2>
+      <h2 class="section-title reveal">ZO ZIET EEN KLANT HET IN HET GESPREK</h2>
       <p class="section-body" style="margin-top:16px;">
         Dit zijn echte berekeningen voor een gezin met 10 zonnepanelen, enkeltarief en een 10 kWh batterij. <strong>Geen gemiddelden — exacte cijfers</strong> op basis van hun jaarafrekening.
       </p>
@@ -754,35 +799,35 @@
   <div class="features-inner">
     <div class="features-header">
       <div class="section-overline">Wat u krijgt</div>
-      <h2 class="section-title">ALLES WAT U NODIG HEEFT IN EEN GESPREK</h2>
+      <h2 class="section-title reveal">ALLES WAT U NODIG HEEFT IN EEN GESPREK</h2>
     </div>
     <div class="features-grid">
-      <div class="feature">
+      <div class="feature feature-card reveal">
         <span class="feature-icon">⚡</span>
         <div class="feature-title">EXACTE SALDERINGSIMPACT</div>
         <p class="feature-desc">Berekend op basis van de werkelijke cijfers van de klant. A1, B1 en C1 kloppen altijd met de jaarafrekening — geen schattingen.</p>
       </div>
-      <div class="feature">
+      <div class="feature feature-card reveal">
         <span class="feature-icon">📊</span>
         <div class="feature-title">VOLLEDIGE TARIEFMATRIX</div>
         <p class="feature-desc">Enkel, dag/nacht en dynamisch tarief naast elkaar. U ziet direct welk tarief het voordeligst is voor deze klant met een batterij.</p>
       </div>
-      <div class="feature">
+      <div class="feature feature-card reveal">
         <span class="feature-icon">🔋</span>
         <div class="feature-title">REALISTISCHE BESPARING</div>
         <p class="feature-desc">Geen overdreven beloftes. De besparing wordt analytisch berekend op basis van PV-overschot, batterijcapaciteit en seizoenspatronen.</p>
       </div>
-      <div class="feature">
+      <div class="feature feature-card reveal">
         <span class="feature-icon">🌡️</span>
         <div class="feature-title">WARMTEPOMP & EV</div>
         <p class="feature-desc">Specifiek verbruiksprofiel voor warmtepompen en elektrische auto's. Het systeem past de berekening automatisch aan.</p>
       </div>
-      <div class="feature">
+      <div class="feature feature-card reveal">
         <span class="feature-icon">📄</span>
         <div class="feature-title">AI ADVIESRAPPORT</div>
         <p class="feature-desc">Een volledig rapport met managementsamenvatting, financiële analyse en aanbeveling — gegenereerd door AI, klaar in seconden.</p>
       </div>
-      <div class="feature">
+      <div class="feature feature-card reveal">
         <span class="feature-icon">🇳🇱</span>
         <div class="feature-title">NEDERLAND & BELGIË</div>
         <p class="feature-desc">Ondersteuning voor zowel de Nederlandse als de Belgische energiemarkt, inclusief de lokale tariefstructuren.</p>
@@ -795,8 +840,8 @@
 <section class="pricing">
   <div class="pricing-inner">
     <div class="section-overline" style="text-align:center;">Prijzen</div>
-    <h2 class="section-title" style="text-align:center;">ÉÉN PRIJS. ALLES INBEGREPEN.</h2>
-    <div class="pricing-card">
+    <h2 class="section-title reveal" style="text-align:center;">ÉÉN PRIJS. ALLES INBEGREPEN.</h2>
+    <div class="pricing-card reveal">
       <div class="pricing-glow"></div>
       <div class="pricing-badge">Per gebruiker per maand</div>
       <div class="pricing-amount"><sup>€</sup>99</div>
@@ -823,27 +868,27 @@
   <div class="faq-inner">
     <div class="faq-header">
       <div class="section-overline">Veelgestelde vragen</div>
-      <h2 class="section-title">FAQ</h2>
+      <h2 class="section-title reveal">FAQ</h2>
     </div>
     <div class="faq-item">
       <div class="faq-q">Voor wie is Eco Metric bedoeld?</div>
-      <div class="faq-a">Eco Metric is ontwikkeld voor verkopers bij installatiebedrijven die thuisbatterijen verkopen. De tool helpt u in salesgesprekken om de financiële impact van de salderingsafbouw direct en op maat te berekenen.</div>
+      <div class="faq-a faq-answer">Eco Metric is ontwikkeld voor verkopers bij installatiebedrijven die thuisbatterijen verkopen. De tool helpt u in salesgesprekken om de financiële impact van de salderingsafbouw direct en op maat te berekenen.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">Hoe nauwkeurig zijn de berekeningen?</div>
-      <div class="faq-a">De berekeningen zijn gebaseerd op de door u ingevoerde klantdata (jaarverbruik, opwek, teruglevering) en kloppen altijd met de jaarafrekening van de klant. We gebruiken geen gemiddelden — elke berekening is op maat.</div>
+      <div class="faq-a faq-answer">De berekeningen zijn gebaseerd op de door u ingevoerde klantdata (jaarverbruik, opwek, teruglevering) en kloppen altijd met de jaarafrekening van de klant. We gebruiken geen gemiddelden — elke berekening is op maat.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">Kan ik de tool ook voor Belgische klanten gebruiken?</div>
-      <div class="faq-a">Ja, Eco Metric ondersteunt zowel de Nederlandse als de Belgische energiemarkt, inclusief de lokale tariefstructuren en regelgeving rondom zonnepanelen.</div>
+      <div class="faq-a faq-answer">Ja, Eco Metric ondersteunt zowel de Nederlandse als de Belgische energiemarkt, inclusief de lokale tariefstructuren en regelgeving rondom zonnepanelen.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">Wat is de opzegtermijn?</div>
-      <div class="faq-a">Eco Metric is maandelijks opzegbaar, zonder contract of opzegtermijn. U betaalt alleen voor de maanden dat u de tool gebruikt.</div>
+      <div class="faq-a faq-answer">Eco Metric is maandelijks opzegbaar, zonder contract of opzegtermijn. U betaalt alleen voor de maanden dat u de tool gebruikt.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">Hoe snel kan ik aan de slag?</div>
-      <div class="faq-a">Direct na betaling heeft u toegang tot de tool. Er is geen installatie of setup nodig — u logt in via uw browser en kunt meteen beginnen.</div>
+      <div class="faq-a faq-answer">Direct na betaling heeft u toegang tot de tool. Er is geen installatie of setup nodig — u logt in via uw browser en kunt meteen beginnen.</div>
     </div>
   </div>
 </section>
@@ -855,15 +900,87 @@
 </footer>
 
 <script>
-  // FAQ toggle
-  document.querySelectorAll('.faq-q').forEach(q => {
-    q.addEventListener('click', () => {
-      const item = q.parentElement;
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    if (window.scrollY > 40) {
+      nav.style.boxShadow = '0 4px 24px rgba(0,0,0,0.18)';
+    } else {
+      nav.style.boxShadow = 'none';
+    }
+  });
+
+  function countUp(el, target, duration = 1800) {
+    let start = 0;
+    const step = target / (duration / 16);
+    const timer = setInterval(() => {
+      start += step;
+      if (start >= target) {
+        el.textContent = target.toLocaleString('nl-NL');
+        clearInterval(timer);
+      } else {
+        el.textContent = Math.floor(start).toLocaleString('nl-NL');
+      }
+    }, 16);
+  }
+
+  const statObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const el = e.target;
+        const raw = el.dataset.target;
+        countUp(el, parseInt(raw, 10));
+        statObserver.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.count-num').forEach(el => statObserver.observe(el));
+
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const answer = item.querySelector('.faq-answer');
+    if (answer) {
+      answer.style.maxHeight = '0';
+      answer.style.overflow = 'hidden';
+      answer.style.transition = 'max-height 0.4s ease';
+    }
+    item.addEventListener('click', () => {
       const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-      if (!isOpen) item.classList.add('open');
+      document.querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('open');
+        const a = i.querySelector('.faq-answer');
+        if (a) a.style.maxHeight = '0';
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        if (answer) answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
     });
   });
+
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY;
+    const total = document.body.scrollHeight - window.innerHeight;
+    const pct = (scrolled / total) * 100;
+    document.getElementById('progress-bar').style.width = pct + '%';
+  });
+
+  const hero = document.querySelector('.hero');
+  const glow = document.getElementById('hero-glow');
+  if (hero && glow) {
+    hero.addEventListener('mousemove', (e) => {
+      const rect = hero.getBoundingClientRect();
+      glow.style.left = (e.clientX - rect.left) + 'px';
+      glow.style.top = (e.clientY - rect.top) + 'px';
+    });
+  }
 </script>
 
 </body>
