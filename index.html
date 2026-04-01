@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="nl">
 <head>
   <meta charset="UTF-8">
@@ -35,7 +35,7 @@
       overflow-x: hidden;
     }
 
-    /* â”€â”€ NAV â”€â”€ */
+    /* -- NAV -- */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       height: 80px;
@@ -62,7 +62,7 @@
     }
     .nav-btn:hover { background: #c44d18; transform: translateY(-2px) scale(1.03); box-shadow: 0 12px 32px rgba(232,98,42,0.45); }
 
-    /* â”€â”€ HERO â”€â”€ */
+    /* -- HERO -- */
     .hero-light {
       background: var(--bg-light);
     }
@@ -382,7 +382,7 @@
     .hero-stat-num.green { color: var(--green); }
     .hero-stat-label { font-size: 0.78rem; color: rgba(12,14,18,0.5); line-height: 1.4; }
 
-    /* â”€â”€ PROBLEM STRIP â”€â”€ */
+    /* -- PROBLEM STRIP -- */
     .strip {
       background: var(--accent);
       padding: 18px 60px;
@@ -404,7 +404,7 @@
     }
     .strip-dot { color: rgba(255,255,255,0.4); }
 
-    /* â”€â”€ PROBLEM â”€â”€ */
+    /* -- PROBLEM -- */
     .problem {
       padding: 120px 60px;
       background: var(--bg);
@@ -462,7 +462,7 @@
       font-size: 0.82rem; color: var(--muted); line-height: 1.4;
     }
 
-    /* â”€â”€ HOW â”€â”€ */
+    /* -- HOW -- */
     .how {
       padding: 120px 60px;
       background: var(--off);
@@ -511,7 +511,7 @@
       color: rgba(0,0,0,0.55); line-height: 1.65;
     }
 
-    /* â”€â”€ TOOL MOCKUP â”€â”€ */
+    /* -- TOOL MOCKUP -- */
     .mockup-section {
       padding: 120px 60px;
       background: var(--bg2);
@@ -595,7 +595,7 @@
     .mockup-row.data { color: rgba(255,255,255,0.7); }
     .hl { color: var(--green); font-weight: 600; }
 
-    /* â”€â”€ FEATURES â”€â”€ */
+    /* -- FEATURES -- */
     .features {
       padding: 120px 60px;
       background: var(--bg-light);
@@ -637,7 +637,7 @@
       color: var(--text-dark-muted); line-height: 1.65;
     }
 
-    /* â”€â”€ PRICING â”€â”€ */
+    /* -- PRICING -- */
     .pricing {
       padding: 120px 60px;
       background: var(--bg2);
@@ -694,7 +694,7 @@
     }
     .pricing-list li:last-child { border-bottom: none; }
     .pricing-list li::before {
-      content: 'âœ“'; color: var(--green);
+      content: '✓'; color: var(--green);
       font-weight: 700; flex-shrink: 0; margin-top: 1px;
     }
     .btn-cta {
@@ -712,7 +712,7 @@
       font-size: 0.78rem; color: var(--muted); margin-top: 16px;
     }
 
-    /* â”€â”€ FAQ â”€â”€ */
+    /* -- FAQ -- */
     .faq {
       padding: 120px 60px;
       background: var(--bg-light);
@@ -754,7 +754,7 @@
       transform: translateY(0);
     }
 
-    /* â”€â”€ FOOTER â”€â”€ */
+    /* -- FOOTER -- */
     footer {
       background: var(--bg2);
       border-top: 1px solid var(--border);
@@ -770,7 +770,7 @@
     .footer-logo img { height: 82px; width: auto; display: block; }
     .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.2); }
 
-    /* â”€â”€ ANIMATIONS â”€â”€ */
+    /* -- ANIMATIONS -- */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(28px); }
       to { opacity: 1; transform: translateY(0); }
@@ -781,7 +781,7 @@
     .hero-actions { animation: fadeUp 0.5s 0.3s ease both; }
     .hero-stats { animation: fadeUp 0.6s 0.2s ease both; }
 
-    /* â”€â”€ RESPONSIVE â”€â”€ */
+    /* -- RESPONSIVE -- */
     @media (max-width: 1000px) {
       nav { padding: 16px 24px; }
       .hero { padding: 120px 24px 200px; }
@@ -855,27 +855,27 @@
             <div class="input-field">
               <div class="input-label">Huidige situatie</div>
               <div class="input-sublabel">Met saldering</div>
-              <div class="input-val">â‚¬ 287,00</div>
+              <div class="input-val">€ 287,00</div>
             </div>
             <div class="input-field">
               <div class="input-label">Toekomst zonder saldering</div>
               <div class="input-sublabel">Zonder batterij</div>
-              <div class="input-val input-val--red">â‚¬ 683,00</div>
+              <div class="input-val input-val--red">€ 683,00</div>
             </div>
             <div class="input-field">
               <div class="input-label">Toekomst met batterij</div>
               <div class="input-sublabel">Zonder saldering</div>
-              <div class="input-val input-val--green">â‚¬ 346,40</div>
+              <div class="input-val input-val--green">€ 346,40</div>
             </div>
             <div class="input-field input-field--dark">
               <div class="input-label input-label--light">Besparing per jaar</div>
-              <div class="input-sublabel input-sublabel--light">Saldering kost u straks â‚¬396/jr extra | Batterij compenseert â‚¬337/jr</div>
-              <div class="input-val input-val--orange">â‚¬ 336,60</div>
+              <div class="input-sublabel input-sublabel--light">Saldering kost u straks €396/jr extra | Batterij compenseert €337/jr</div>
+              <div class="input-val input-val--orange">€ 336,60</div>
             </div>
           </div>
           <div class="chart-wrap">
             <div class="chart-header">
-              <div class="chart-title">Financieel overzicht 2024â€“2031</div>
+              <div class="chart-title">Financieel overzicht 2024–2031</div>
               <div class="chart-legend">
                 <div class="legend-item">
                   <div class="legend-dot" style="background: #E8453C"></div>
@@ -903,11 +903,11 @@
               <line class="grid-line" x1="40" y1="70" x2="450" y2="70"></line>
               <line class="grid-line" x1="40" y1="100" x2="450" y2="100"></line>
               <line class="grid-line" x1="40" y1="130" x2="450" y2="130"></line>
-              <text class="axis-label" x="32" y="13" text-anchor="end">â‚¬1.200</text>
-              <text class="axis-label" x="32" y="43" text-anchor="end">â‚¬900</text>
-              <text class="axis-label" x="32" y="73" text-anchor="end">â‚¬600</text>
-              <text class="axis-label" x="32" y="103" text-anchor="end">â‚¬300</text>
-              <text class="axis-label" x="32" y="133" text-anchor="end">â‚¬0</text>
+              <text class="axis-label" x="32" y="13" text-anchor="end">€1.200</text>
+              <text class="axis-label" x="32" y="43" text-anchor="end">€900</text>
+              <text class="axis-label" x="32" y="73" text-anchor="end">€600</text>
+              <text class="axis-label" x="32" y="103" text-anchor="end">€300</text>
+              <text class="axis-label" x="32" y="133" text-anchor="end">€0</text>
               <text class="axis-label" x="40" y="140" text-anchor="middle">2024</text>
               <text class="axis-label" x="112" y="140" text-anchor="middle">2025</text>
               <text class="axis-label" x="184" y="140" text-anchor="middle">2026</text>
@@ -938,21 +938,21 @@
 <div class="strip">
   <div class="strip-inner">
     <span class="strip-item">MAAK HET INZICHTELIJK</span>
-    <span class="strip-item strip-dot">Â·</span>
+    <span class="strip-item strip-dot">·</span>
     <span class="strip-item">LAAT DE CIJFERS HET WERK DOEN</span>
-    <span class="strip-item strip-dot">Â·</span>
+    <span class="strip-item strip-dot">·</span>
     <span class="strip-item">SALDERING VERDWIJNT IN 2027</span>
-    <span class="strip-item strip-dot">Â·</span>
+    <span class="strip-item strip-dot">·</span>
     <span class="strip-item">WAT LEVERT EEN BATTERIJ DE KLANT PRECIES OP?</span>
-    <span class="strip-item strip-dot">Â·</span>
+    <span class="strip-item strip-dot">·</span>
     <span class="strip-item">MAAK HET INZICHTELIJK</span>
-    <span class="strip-item strip-dot">Â·</span>
+    <span class="strip-item strip-dot">·</span>
     <span class="strip-item">LAAT DE CIJFERS HET WERK DOEN</span>
-    <span class="strip-item strip-dot">Â·</span>
+    <span class="strip-item strip-dot">·</span>
     <span class="strip-item">SALDERING VERDWIJNT IN 2027</span>
-    <span class="strip-item strip-dot">Â·</span>
+    <span class="strip-item strip-dot">·</span>
     <span class="strip-item">WAT LEVERT EEN BATTERIJ DE KLANT PRECIES OP?</span>
-    <span class="strip-item strip-dot">Â·</span>
+    <span class="strip-item strip-dot">·</span>
   </div>
 </div>
 
@@ -964,13 +964,13 @@
       <h2 class="section-title reveal">LAAT UW PROSPECT ZIEN WAT ZE GAAN BESPAREN</h2>
       <div class="section-body">
         <p>Vanaf 2027 verdwijnt de salderingsregeling. Huishoudens met zonnepanelen kunnen honderden euro's meer gaan betalen, tenzij ze een batterij hebben.</p>
-        <p>Als verkoper weet u dit. Maar zonder concrete cijfers voor dÃ­e specifieke klant blijft het abstract.</p>
+        <p>Als verkoper weet u dit. Maar zonder concrete cijfers voor díe specifieke klant blijft het abstract.</p>
         <p>EcoMetric maakt het tastbaar: in 5 minuten een volledige analyse op maat, ter plekke in het gesprek.</p>
       </div>
     </div>
     <div class="problem-cards">
       <div class="problem-card">
-        <div class="problem-card-num">â‚¬440</div>
+        <div class="problem-card-num">€440</div>
         <div class="problem-card-label">extra jaarkost die uw klant betaalt als u niks doet</div>
       </div>
       <div class="problem-card">
@@ -978,11 +978,11 @@
         <div class="problem-card-label">huishoudens met zonnepanelen weet het nog niet</div>
       </div>
       <div class="problem-card">
-        <div class="problem-card-num">â‚¬0</div>
+        <div class="problem-card-num">€0</div>
         <div class="problem-card-label">verkoopargument zonder concrete cijfers voor die klant</div>
       </div>
       <div class="problem-card">
-        <div class="problem-card-num">+20â€“40%</div>
+        <div class="problem-card-num">+20–40%</div>
         <div class="problem-card-label">hogere sluitkans met data in het gesprek</div>
       </div>
     </div>
@@ -999,19 +999,19 @@
     <div class="how-steps">
       <div class="how-step reveal">
         <div class="how-step-num">01</div>
-        <div class="how-step-icon">ðŸ“‹</div>
+        <div class="how-step-icon">📋</div>
         <div class="how-step-title">KLANTDATA INVOEREN</div>
         <p class="how-step-desc">Jaarverbruik, opwek en teruglevering van de jaarafrekening. Warmtepomp of EV? Gewoon aanvinken. In minder dan 2 minuten klaar.</p>
       </div>
       <div class="how-step reveal">
         <div class="how-step-num">02</div>
-        <div class="how-step-icon">ðŸ”‹</div>
+        <div class="how-step-icon">🔋</div>
         <div class="how-step-title">BATTERIJ CONFIGUREREN</div>
         <p class="how-step-desc">Capaciteit, vermogen, investering en levensduur instellen. Degradatie wordt automatisch meegenomen. De tool berekent de exacte besparing per jaar.</p>
       </div>
       <div class="how-step reveal">
         <div class="how-step-num">03</div>
-        <div class="how-step-icon">ðŸ“Š</div>
+        <div class="how-step-icon">📊</div>
         <div class="how-step-title">RESULTAAT TONEN</div>
         <p class="how-step-desc">Drie scenario's, volledige tariefmatrix, ROI en terugverdientijd, plus een AI-gegenereerd adviesrapport. Klaar om te laten zien.</p>
       </div>
@@ -1034,41 +1034,41 @@
         <div class="mockup-dot"></div>
         <div class="mockup-dot"></div>
         <div class="mockup-dot"></div>
-        <div class="mockup-url">app.ecometric.nl, Stap 5 Â· Resultaten</div>
+        <div class="mockup-url">app.ecometric.nl - Stap 5 · Resultaten</div>
       </div>
       <div class="mockup-tiles">
         <div class="mockup-tile">
           <div class="mockup-tile-label">Huidige situatie<br>Met saldering</div>
-          <div class="mockup-tile-val">â‚¬577</div>
+          <div class="mockup-tile-val">€577</div>
         </div>
         <div class="mockup-tile">
           <div class="mockup-tile-label">Toekomst zonder<br>batterij</div>
-          <div class="mockup-tile-val red">â‚¬1.017</div>
+          <div class="mockup-tile-val red">€1.017</div>
         </div>
         <div class="mockup-tile">
           <div class="mockup-tile-label">Toekomst met<br>batterij</div>
-          <div class="mockup-tile-val green">â‚¬643</div>
+          <div class="mockup-tile-val green">€643</div>
         </div>
       </div>
       <div class="mockup-saving">
         <div class="mockup-saving-label">
           <strong>Besparing per jaar</strong>
-          Saldering kost â‚¬440/jr extra, batterij compenseert â‚¬374/jr
+          Saldering kost €440/jr extra, batterij compenseert €374/jr
         </div>
-        <div class="mockup-saving-val">â‚¬374</div>
+        <div class="mockup-saving-val">€374</div>
       </div>
       <div class="mockup-table">
         <div class="mockup-row header">
           <span>Scenario</span><span>Enkel</span><span>Dag/Nacht</span><span>Dynamisch</span>
         </div>
         <div class="mockup-row data">
-          <span>Huidige situatie</span><span>â‚¬577</span><span>â‚¬538</span><span>â‚¬564</span>
+          <span>Huidige situatie</span><span>€577</span><span>€538</span><span>€564</span>
         </div>
         <div class="mockup-row data">
-          <span>Zonder batterij</span><span>â‚¬1017</span><span>â‚¬918</span><span>â‚¬984</span>
+          <span>Zonder batterij</span><span>€1017</span><span>€918</span><span>€984</span>
         </div>
         <div class="mockup-row data">
-          <span>Met batterij</span><span>â‚¬643</span><span class="hl">â‚¬595</span><span>â‚¬627</span>
+          <span>Met batterij</span><span>€643</span><span class="hl">€595</span><span>€627</span>
         </div>
       </div>
     </div>
@@ -1084,33 +1084,33 @@
     </div>
     <div class="features-grid">
       <div class="feature feature-card reveal">
-        <span class="feature-icon">âš¡</span>
+        <span class="feature-icon">⚡</span>
         <div class="feature-title">EXACTE SALDERINGSIMPACT</div>
         <p class="feature-desc">Drie scenario's naast elkaar, huidige situatie, toekomst zonder batterij, toekomst met batterij. Gebaseerd op de werkelijke jaarafrekening. Geen schattingen.</p>
       </div>
       <div class="feature feature-card reveal">
-        <span class="feature-icon">ðŸ“Š</span>
+        <span class="feature-icon">📊</span>
         <div class="feature-title">VOLLEDIGE TARIEFMATRIX</div>
-        <p class="feature-desc">Enkel, dag/nacht Ã©n dynamisch tarief simultaan berekend. U ziet direct welk tarief het voordeligst is voor deze klant met een batterij.</p>
+        <p class="feature-desc">Enkel, dag/nacht én dynamisch tarief simultaan berekend. U ziet direct welk tarief het voordeligst is voor deze klant met een batterij.</p>
       </div>
       <div class="feature feature-card reveal">
-        <span class="feature-icon">ðŸ’¶</span>
+        <span class="feature-icon">💶</span>
         <div class="feature-title">ROI & TERUGVERDIENTIJD</div>
         <p class="feature-desc">Per tarieftype exact berekend. Besparing per jaar, terugverdientijd en ROI, geen schatting, maar harde cijfers uit de simulatie.</p>
       </div>
       <div class="feature feature-card reveal">
-        <span class="feature-icon">ðŸŒ¡ï¸</span>
+        <span class="feature-icon">🌡️</span>
         <div class="feature-title">WARMTEPOMP & EV</div>
         <p class="feature-desc">Specifiek verbruiksprofiel voor warmtepompen (met/zonder buffervat) en elektrische auto's. Laadmoment configureerbaar. Berekening past zich automatisch aan.</p>
       </div>
       <div class="feature feature-card reveal">
-        <span class="feature-icon">ðŸ“„</span>
+        <span class="feature-icon">📄</span>
         <div class="feature-title">AI ADVIESRAPPORT</div>
-        <p class="feature-desc">Managementsamenvatting, financiÃ«le analyse en aanbeveling, gegenereerd door AI op basis van de klantdata. Klaar in seconden, direct mee te geven.</p>
+        <p class="feature-desc">Managementsamenvatting, financiële analyse en aanbeveling, gegenereerd door AI op basis van de klantdata. Klaar in seconden, direct mee te geven.</p>
       </div>
       <div class="feature feature-card reveal">
-        <span class="feature-icon">ðŸ‡³ðŸ‡±</span>
-        <div class="feature-title">NEDERLAND & BELGIÃ‹</div>
+        <span class="feature-icon">🇳🇱</span>
+        <div class="feature-title">NEDERLAND & BELGIË</div>
         <p class="feature-desc">Volledige ondersteuning voor beide markten, inclusief lokale tariefstructuren, terugleverkosten en regelgeving rondom zonnepanelen.</p>
       </div>
     </div>
@@ -1121,11 +1121,11 @@
 <section class="pricing">
   <div class="pricing-inner">
     <div class="section-overline" style="text-align:center;">Prijzen</div>
-    <h2 class="section-title reveal" style="text-align:center;">Ã‰Ã‰N PRIJS. ALLES INBEGREPEN.</h2>
+    <h2 class="section-title reveal" style="text-align:center;">ÉÉN PRIJS. ALLES INBEGREPEN.</h2>
     <div class="pricing-card reveal">
       <div class="pricing-glow"></div>
       <div class="pricing-badge">Per gebruiker per maand</div>
-      <div class="pricing-amount"><sup>â‚¬</sup>99</div>
+      <div class="pricing-amount"><sup>€</sup>99</div>
       <div class="pricing-period">per maand &middot; maandelijks opzegbaar</div>
       <ul class="pricing-list">
         <li>Onbeperkt berekeningen</li>
@@ -1135,7 +1135,7 @@
         <li>ROI & terugverdientijd per tarieftype</li>
         <li>AI-gegenereerd adviesrapport (PDF)</li>
         <li>Warmtepomp & EV ondersteuning</li>
-        <li>Nederland Ã©n BelgiÃ«</li>
+        <li>Nederland én België</li>
         <li>Maandelijks opzegbaar &middot; geen contract</li>
       </ul>
       <a href="https://app.ecometric.nl/" class="btn-cta">
@@ -1155,7 +1155,7 @@
     </div>
     <div class="faq-item">
       <div class="faq-q">Voor wie is Eco Metric bedoeld?</div>
-      <div class="faq-a faq-answer">Eco Metric is ontwikkeld voor verkopers bij installatiebedrijven die thuisbatterijen verkopen. De tool helpt u in salesgesprekken om de financiÃ«le impact van de salderingsafbouw direct en op maat te berekenen.</div>
+      <div class="faq-a faq-answer">Eco Metric is ontwikkeld voor verkopers bij installatiebedrijven die thuisbatterijen verkopen. De tool helpt u in salesgesprekken om de financiële impact van de salderingsafbouw direct en op maat te berekenen.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">Hoe nauwkeurig zijn de berekeningen?</div>
