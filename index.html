@@ -74,6 +74,18 @@
       position: relative; overflow: hidden;
       background: var(--bg-light);
     }
+    .hero-main {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 48px;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-left {
+      max-width: 700px;
+    }
     .hero::before {
       content: '';
       position: absolute; inset: 0;
@@ -161,6 +173,193 @@
     }
     .hero .btn-ghost:hover {
       color: var(--text-dark);
+    }
+    .hero-right {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 0;
+      position: relative;
+      z-index: 1;
+    }
+    .mockup-shell {
+      background: var(--white);
+      border-radius: 20px;
+      box-shadow:
+        0 2px 4px rgba(0,0,0,0.06),
+        0 8px 24px rgba(0,0,0,0.10),
+        0 24px 64px rgba(0,0,0,0.12);
+      width: 100%;
+      max-width: 520px;
+      overflow: hidden;
+      animation: floatUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+    @keyframes floatUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero-right .mockup-topbar {
+      background: var(--bg);
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 0;
+    }
+    .mockup-dots {
+      display: flex;
+      gap: 6px;
+    }
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+    .dot-r { background: #FF5F57; }
+    .dot-y { background: #FFBD2E; }
+    .dot-g { background: #28C840; }
+    .mockup-title {
+      color: rgba(255,255,255,0.5);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      flex: 1;
+      text-align: center;
+    }
+    .mockup-body {
+      padding: 24px;
+    }
+    .mockup-inputs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .input-field {
+      background: #f7f4f0;
+      border: 1.5px solid #e8e4de;
+      border-radius: 10px;
+      padding: 10px 14px;
+    }
+    .input-label {
+      font-size: 10px;
+      color: #6b6560;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 3px;
+    }
+    .input-sublabel {
+      font-size: 9px;
+      color: #6b6560;
+      font-weight: 400;
+      margin-bottom: 5px;
+      line-height: 1.3;
+    }
+    .input-val {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--bg);
+    }
+    .input-val--red { color: #E8453C; }
+    .input-val--green { color: #2EC97A; }
+    .input-val--orange { color: var(--accent); }
+    .input-field--dark {
+      background: var(--bg);
+      border-color: var(--bg);
+    }
+    .input-label--light { color: rgba(255,255,255,0.5); }
+    .input-sublabel--light { color: rgba(255,255,255,0.35); }
+    .chart-wrap {
+      background: #f7f4f0;
+      border-radius: 14px;
+      padding: 16px 16px 12px;
+      margin-bottom: 16px;
+    }
+    .chart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .chart-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--bg);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .chart-legend {
+      display: flex;
+      gap: 12px;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 10px;
+      color: #6b6560;
+      font-weight: 500;
+    }
+    .legend-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+    .chart-svg {
+      width: 100%;
+      height: 140px;
+      overflow: visible;
+    }
+    .line-loss {
+      fill: none;
+      stroke: #E8453C;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-dasharray: 600;
+      stroke-dashoffset: 600;
+      animation: drawLine 1.6s cubic-bezier(0.4, 0, 0.2, 1) 0.4s forwards;
+    }
+    .line-battery {
+      fill: none;
+      stroke: #2EC97A;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-dasharray: 600;
+      stroke-dashoffset: 600;
+      animation: drawLine 1.6s cubic-bezier(0.4, 0, 0.2, 1) 0.7s forwards;
+    }
+    .area-loss {
+      fill: url(#gradLoss);
+      opacity: 0;
+      animation: fadeInArea 0.6s ease 2s forwards;
+    }
+    .area-battery {
+      fill: url(#gradBattery);
+      opacity: 0;
+      animation: fadeInArea 0.6s ease 2.1s forwards;
+    }
+    @keyframes drawLine {
+      to { stroke-dashoffset: 0; }
+    }
+    @keyframes fadeInArea {
+      to { opacity: 1; }
+    }
+    @keyframes cardPop {
+      from { opacity: 0; transform: scale(0.85) translateY(8px); }
+      to   { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    .grid-line {
+      stroke: #e8e4de;
+      stroke-width: 1;
+    }
+    .axis-label {
+      fill: #6b6560;
+      font-size: 9px;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 500;
     }
     .hero-stats {
       position: absolute; right: 60px; top: 50%;
@@ -585,6 +784,8 @@
     @media (max-width: 1000px) {
       nav { padding: 16px 24px; }
       .hero { padding: 120px 24px 200px; }
+      .hero-main { grid-template-columns: 1fr; }
+      .hero-right { display: none; }
       .hero-stats {
         position: static; transform: none;
         flex-direction: row; flex-wrap: wrap;
@@ -619,6 +820,8 @@
 <section class="hero">
   <div class="hero-glow" id="hero-glow"></div>
   <div class="hero-grid-bg"></div>
+  <div class="hero-main">
+  <div class="hero-left">
   <div class="hero-tag">Voor batterijverkopers</div>
   <h1 class="hero-title">
     <span class="line1">MAAK</span><br>
@@ -635,6 +838,98 @@
     <a href="#how" class="btn-ghost">
       Hoe werkt het? &darr;
     </a>
+  </div>
+  </div>
+  <div class="hero-right">
+      <div class="mockup-shell">
+        <div class="mockup-topbar">
+          <div class="mockup-dots">
+            <div class="dot dot-r"></div>
+            <div class="dot dot-y"></div>
+            <div class="dot dot-g"></div>
+          </div>
+          <div class="mockup-title">EcoMetric — Berekening</div>
+        </div>
+        <div class="mockup-body">
+          <div class="mockup-inputs">
+            <div class="input-field">
+              <div class="input-label">Huidige situatie</div>
+              <div class="input-sublabel">Met saldering | Uw energiekosten nu</div>
+              <div class="input-val">€ 287,00</div>
+            </div>
+            <div class="input-field">
+              <div class="input-label">Toekomst zonder batterij</div>
+              <div class="input-sublabel">Zonder saldering | Wat u straks betaalt</div>
+              <div class="input-val input-val--red">€ 683,00</div>
+            </div>
+            <div class="input-field">
+              <div class="input-label">Toekomst met batterij</div>
+              <div class="input-sublabel">Zonder saldering | Met eigen opslag</div>
+              <div class="input-val input-val--green">€ 346,40</div>
+            </div>
+            <div class="input-field input-field--dark">
+              <div class="input-label input-label--light">Besparing per jaar</div>
+              <div class="input-sublabel input-sublabel--light">Saldering kost u straks €396/jr extra | Batterij compenseert €337/jr</div>
+              <div class="input-val input-val--orange">€ 336,60</div>
+            </div>
+          </div>
+          <div class="chart-wrap">
+            <div class="chart-header">
+              <div class="chart-title">Financieel overzicht 2024–2031</div>
+              <div class="chart-legend">
+                <div class="legend-item">
+                  <div class="legend-dot" style="background: #E8453C"></div>
+                  Salderingsverlies
+                </div>
+                <div class="legend-item">
+                  <div class="legend-dot" style="background: #2EC97A"></div>
+                  Batterijbesparing
+                </div>
+              </div>
+            </div>
+            <svg class="chart-svg" viewBox="0 0 460 140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+              <defs>
+                <lineargradient id="gradLoss" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#E8453C" stop-opacity="0.18"></stop>
+                  <stop offset="100%" stop-color="#E8453C" stop-opacity="0.02"></stop>
+                </lineargradient>
+                <lineargradient id="gradBattery" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#2EC97A" stop-opacity="0.18"></stop>
+                  <stop offset="100%" stop-color="#2EC97A" stop-opacity="0.02"></stop>
+                </lineargradient>
+              </defs>
+              <line class="grid-line" x1="40" y1="10" x2="450" y2="10"></line>
+              <line class="grid-line" x1="40" y1="40" x2="450" y2="40"></line>
+              <line class="grid-line" x1="40" y1="70" x2="450" y2="70"></line>
+              <line class="grid-line" x1="40" y1="100" x2="450" y2="100"></line>
+              <line class="grid-line" x1="40" y1="130" x2="450" y2="130"></line>
+              <text class="axis-label" x="32" y="13" text-anchor="end">€1.200</text>
+              <text class="axis-label" x="32" y="43" text-anchor="end">€900</text>
+              <text class="axis-label" x="32" y="73" text-anchor="end">€600</text>
+              <text class="axis-label" x="32" y="103" text-anchor="end">€300</text>
+              <text class="axis-label" x="32" y="133" text-anchor="end">€0</text>
+              <text class="axis-label" x="40" y="140" text-anchor="middle">2024</text>
+              <text class="axis-label" x="112" y="140" text-anchor="middle">2025</text>
+              <text class="axis-label" x="184" y="140" text-anchor="middle">2026</text>
+              <text class="axis-label" x="256" y="140" text-anchor="middle">2027</text>
+              <text class="axis-label" x="328" y="140" text-anchor="middle">2028</text>
+              <text class="axis-label" x="400" y="140" text-anchor="middle">2029</text>
+              <text class="axis-label" x="450" y="140" text-anchor="middle">2030</text>
+              <path class="area-loss" d="M40,115 C80,105 112,88 184,72 C220,64 256,55 328,40 C370,32 420,22 450,18 L450,130 L40,130 Z"></path>
+              <path class="area-battery" d="M40,120 C80,118 112,115 184,110 C256,105 328,95 400,82 L450,76 L450,130 L40,130 Z"></path>
+              <path class="line-loss" d="M40,115 C80,105 112,88 184,72 C220,64 256,55 328,40 C370,32 420,22 450,18"></path>
+              <path class="line-battery" d="M40,120 C80,118 112,115 184,110 C256,105 328,95 400,82 L450,76"></path>
+              <circle cx="370" cy="58" r="4" fill="var(--accent)" opacity="0">
+                <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="2.2s" fill="freeze"></animate>
+              </circle>
+              <circle cx="370" cy="58" r="8" fill="var(--accent)" opacity="0" fill-opacity="0.2">
+                <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="2.2s" fill="freeze"></animate>
+              </circle>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
 </section>
