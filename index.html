@@ -264,6 +264,9 @@
       border: 1.5px solid #e8e4de;
       border-radius: 10px;
       padding: 10px 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
     }
     .input-label {
       font-size: 14px;
@@ -892,6 +895,7 @@
           <div class="mockup-inputs">
             <div class="input-field">
               <div class="input-label">Huidige situatie</div>
+              <div aria-hidden="true" style="flex:1;min-height:0"></div>
               <div class="input-sublabel">Met saldering</div>
               <div class="input-val">€ 287,00</div>
             </div>
