@@ -440,11 +440,19 @@
       line-height: 1;
     }
 
-    /* -- PROBLEM -- */
+    /* -- PROBLEM (licht / geïnverteerd t.o.v. eerdere donkere variant) -- */
     .problem {
       padding: 120px 60px;
-      background: var(--bg);
-      color: var(--white);
+      background: var(--off);
+      color: var(--bg);
+    }
+    .problem .section-title { color: var(--bg); }
+    .problem .section-body {
+      color: rgba(12,14,18,0.6);
+    }
+    .problem .section-body strong {
+      color: var(--text-dark);
+      font-weight: 500;
     }
     .problem-inner {
       max-width: 1200px; margin: 0 auto;
@@ -473,16 +481,16 @@
       gap: 16px;
     }
     .problem-card {
-      background: var(--bg2);
-      border: 1px solid var(--border);
+      background: var(--bg-light);
+      border: 1px solid rgba(12,14,18,0.1);
       border-radius: 16px; padding: 28px 24px;
       position: relative; overflow: hidden;
       transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
     }
     .problem-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 8px 32px rgba(232,98,42,0.15);
-      border-color: rgba(232,98,42,0.4);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+      border-color: rgba(232,98,42,0.35);
     }
     .problem-card::before {
       content: '';
@@ -495,7 +503,7 @@
       color: var(--accent); line-height: 1; margin-bottom: 8px;
     }
     .problem-card-label {
-      font-size: 0.82rem; color: var(--muted); line-height: 1.4;
+      font-size: 0.82rem; color: rgba(12,14,18,0.55); line-height: 1.4;
     }
 
     /* -- HOW -- */
@@ -1006,6 +1014,36 @@
   </div>
 </div>
 
+<!-- HOW -->
+<section class="how" id="how">
+  <div class="how-inner">
+    <div class="how-header">
+      <div class="section-overline">Hoe het werkt</div>
+      <h2 class="section-title reveal" style="color:var(--bg);">IN DRIE STAPPEN EEN WAARDEVOLLE TOEVOEGING AAN JE SALESGESPREK.</h2>
+    </div>
+    <div class="how-steps">
+      <div class="how-step reveal">
+        <div class="how-step-num">01</div>
+        <div class="how-step-icon">📋</div>
+        <div class="how-step-title">KLANTDATA INVOEREN</div>
+        <p class="how-step-desc">Jaarverbruik, opwek en teruglevering. Warmtepomp of EV?<br>Op basis van echte data,</p>
+      </div>
+      <div class="how-step reveal">
+        <div class="how-step-num">02</div>
+        <div class="how-step-icon">🔋</div>
+        <div class="how-step-title">BATTERIJ CONFIGUREREN</div>
+        <p class="how-step-desc">Capaciteit, vermogen, investering, levensduur en degradatie.<br>De engine berekent de besparing per jaar.</p>
+      </div>
+      <div class="how-step reveal">
+        <div class="how-step-num">03</div>
+        <div class="how-step-icon">📊</div>
+        <div class="how-step-title">RESULTAAT TONEN</div>
+        <p class="how-step-desc">Drie scenario's doorgerekend:<br>Enkel tarief, Dag/nacht &amp; Dynamisch.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- PROBLEM -->
 <section class="problem">
   <div class="problem-inner">
@@ -1034,36 +1072,6 @@
       <div class="problem-card">
         <div class="problem-card-num">+20–40%</div>
         <div class="problem-card-label">hogere sluitkans met data in het gesprek</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- HOW -->
-<section class="how" id="how">
-  <div class="how-inner">
-    <div class="how-header">
-      <div class="section-overline">Hoe het werkt</div>
-      <h2 class="section-title reveal" style="color:var(--bg);">IN DRIE STAPPEN EEN WAARDEVOLLE TOEVOEGING AAN JE SALESGESPREK.</h2>
-    </div>
-    <div class="how-steps">
-      <div class="how-step reveal">
-        <div class="how-step-num">01</div>
-        <div class="how-step-icon">📋</div>
-        <div class="how-step-title">KLANTDATA INVOEREN</div>
-        <p class="how-step-desc">Jaarverbruik, opwek en teruglevering. Warmtepomp of EV?<br>Op basis van echte data,</p>
-      </div>
-      <div class="how-step reveal">
-        <div class="how-step-num">02</div>
-        <div class="how-step-icon">🔋</div>
-        <div class="how-step-title">BATTERIJ CONFIGUREREN</div>
-        <p class="how-step-desc">Capaciteit, vermogen, investering, levensduur en degradatie.<br>De engine berekent de besparing per jaar.</p>
-      </div>
-      <div class="how-step reveal">
-        <div class="how-step-num">03</div>
-        <div class="how-step-icon">📊</div>
-        <div class="how-step-title">RESULTAAT TONEN</div>
-        <p class="how-step-desc">Drie scenario's doorgerekend:<br>Enkel tarief, Dag/nacht &amp; Dynamisch.</p>
       </div>
     </div>
   </div>
