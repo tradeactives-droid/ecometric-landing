@@ -187,18 +187,21 @@
       display: flex;
       align-items: flex-end;
       justify-content: center;
+      min-height: 480px;
     }
     .hero-mockup {
       position: relative;
       z-index: 2;
+      margin-right: -60px;
     }
     .hero-person {
       position: absolute;
       bottom: 0;
-      right: -80px;
-      height: 110%;
-      z-index: 3;
+      right: -40px;
+      height: 105%;
+      z-index: 1;
       pointer-events: none;
+      background: transparent;
     }
     .mockup-shell {
       background: var(--white);
@@ -874,7 +877,7 @@
   </div>
   <div class="hero-right">
       <div class="hero-visual">
-        <img src="verkoper.png" class="hero-person" alt="Batterijverkoper">
+        <img src="verkoper.png" class="hero-person" alt="Batterijverkoper" style="background:transparent;">
         <div class="hero-mockup">
       <div class="mockup-shell">
         <div class="mockup-topbar">
