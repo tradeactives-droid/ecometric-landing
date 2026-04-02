@@ -182,6 +182,24 @@
       position: relative;
       z-index: 1;
     }
+    .hero-visual {
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+    .hero-mockup {
+      position: relative;
+      z-index: 2;
+    }
+    .hero-person {
+      position: absolute;
+      bottom: 0;
+      right: -80px;
+      height: 110%;
+      z-index: 3;
+      pointer-events: none;
+    }
     .mockup-shell {
       background: var(--white);
       border-radius: 20px;
@@ -855,6 +873,9 @@
   </div>
   </div>
   <div class="hero-right">
+      <div class="hero-visual">
+        <img src="verkoper.png" class="hero-person" alt="Batterijverkoper">
+        <div class="hero-mockup">
       <div class="mockup-shell">
         <div class="mockup-topbar">
           <div class="mockup-dots">
@@ -941,6 +962,8 @@
               </circle>
             </svg>
           </div>
+        </div>
+      </div>
         </div>
       </div>
     </div>
