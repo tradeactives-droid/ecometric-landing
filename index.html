@@ -184,24 +184,25 @@
     }
     .hero-visual {
       position: relative;
-      display: flex;
+      display: grid;
       align-items: flex-end;
-      justify-content: center;
-      min-height: 480px;
+      min-height: 520px;
+      width: 100%;
     }
     .hero-mockup {
-      position: relative;
+      position: absolute;
+      left: 0;
+      bottom: 0;
       z-index: 2;
-      margin-right: -60px;
+      width: 72%;
     }
     .hero-person {
       position: absolute;
+      right: 0;
       bottom: 0;
-      right: -40px;
-      height: 105%;
+      height: 100%;
       z-index: 1;
       pointer-events: none;
-      background: transparent;
     }
     .mockup-shell {
       background: var(--white);
