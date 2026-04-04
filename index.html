@@ -440,24 +440,6 @@
       line-height: 1;
     }
 
-    /* -- PROBLEM (licht / geïnverteerd t.o.v. eerdere donkere variant) -- */
-    .problem {
-      padding: 120px 60px;
-      background: var(--off);
-      color: var(--bg);
-    }
-    .problem .section-title { color: var(--bg); }
-    .problem .section-body {
-      color: rgba(12,14,18,0.6);
-    }
-    .problem .section-body strong {
-      color: var(--text-dark);
-      font-weight: 500;
-    }
-    .problem-inner {
-      max-width: 720px;
-      margin: 0 auto;
-    }
     .section-overline {
       font-size: 0.72rem; font-weight: 600;
       letter-spacing: 0.18em; text-transform: uppercase;
@@ -524,72 +506,6 @@
       font-size: 1.05rem; font-weight: 300;
       color: rgba(255,255,255,0.58); line-height: 1.65;
     }
-
-    /* -- TOOL MOCKUP -- */
-    .mockup-section {
-      padding: 120px 60px;
-      background: var(--bg2);
-      color: var(--white);
-    }
-    .mockup-inner {
-      max-width: 1200px; margin: 0 auto;
-      display: grid; grid-template-columns: 1fr 1.4fr;
-      gap: 80px; align-items: center;
-    }
-    .mockup-frame {
-      background: var(--bg3);
-      border: 1px solid var(--border);
-      border-radius: 20px; padding: 28px;
-      box-shadow: 0 40px 80px rgba(0,0,0,0.5),
-                  0 0 0 1px rgba(255,255,255,0.04);
-    }
-    .mockup-topbar {
-      display: flex; align-items: center; gap: 8px;
-      margin-bottom: 24px;
-    }
-    .mockup-dot { width: 10px; height: 10px; border-radius: 50%; }
-    .mockup-dot:nth-child(1) { background: #ff5f57; }
-    .mockup-dot:nth-child(2) { background: #febc2e; }
-    .mockup-dot:nth-child(3) { background: #28c840; }
-    .mockup-url {
-      flex: 1; background: rgba(255,255,255,0.05);
-      border-radius: 6px; padding: 6px 12px;
-      font-size: 0.72rem; color: var(--muted);
-      margin-left: 8px;
-    }
-    .mockup-saving {
-      background: #166534;
-      border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 12px; padding: 16px 18px;
-      display: flex; justify-content: space-between;
-      align-items: center; margin-bottom: 6px;
-      color: #ffffff;
-    }
-    .mockup-saving-label {
-      font-size: 0.75rem; color: #ffffff;
-    }
-    .mockup-saving-label strong {
-      display: block; color: #ffffff;
-      font-size: 0.82rem; margin-bottom: 3px;
-    }
-    .mockup-saving-val {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 2.2rem; color: #ffffff;
-    }
-    .mockup-table {
-      background: rgba(255,255,255,0.03);
-      border-radius: 10px; overflow: hidden;
-      border: 1px solid var(--border);
-    }
-    .mockup-row {
-      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
-      padding: 8px 12px; font-size: 0.7rem;
-      border-bottom: 1px solid rgba(255,255,255,0.04);
-    }
-    .mockup-row:last-child { border-bottom: none; }
-    .mockup-row.header { color: var(--muted); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.06em; }
-    .mockup-row.data { color: rgba(255,255,255,0.7); }
-    .hl { color: var(--green); font-weight: 600; }
 
     /* -- FEATURES -- */
     .features {
@@ -798,11 +714,8 @@
         margin-top: 48px;
       }
       .hero-stat { flex: 1; min-width: 140px; }
-      .problem { padding: 80px 24px; }
       .how { padding: 80px 24px; }
       .how-steps { grid-template-columns: 1fr; }
-      .mockup-section { padding: 80px 24px; }
-      .mockup-inner { grid-template-columns: 1fr; }
       .features { padding: 80px 24px; }
       .features-grid { grid-template-columns: 1fr; }
       .pricing { padding: 80px 24px; }
@@ -1032,63 +945,6 @@
         <span class="feature-icon">🇳🇱</span>
         <div class="feature-title">NEDERLAND & BELGIË</div>
         <p class="feature-desc">Twee markten, één tool. Lokale tariefstructuren, terugleverkosten en regelgeving rondom zonnepanelen volledig verwerkt.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PROBLEM -->
-<section class="problem">
-  <div class="problem-inner">
-    <div>
-      <div class="section-overline">ECOMETRIC</div>
-      <h2 class="section-title reveal">LAAT UW PROSPECTS ZIEN WAT ZE GAAN BESPAREN</h2>
-      <div class="section-body">
-        <p>Vanaf 2027 verdwijnt de salderingsregeling. Huishoudens met zonnepanelen kunnen honderden euro's meer gaan betalen, tenzij ze een batterij hebben.</p>
-        <p>Als verkoper weet u dit. Maar zonder concrete cijfers voor díe specifieke klant blijft het abstract.</p>
-        <p>EcoMetric maakt het tastbaar: in 5 minuten een volledige analyse op maat, ter plekke in het gesprek.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- MOCKUP -->
-<section class="mockup-section">
-  <div class="mockup-inner">
-    <div>
-      <div class="section-overline">De tool in actie</div>
-      <h2 class="section-title reveal">ZO ZIET EEN KLANT HET IN HET GESPREK</h2>
-      <p class="section-body" style="margin-top:16px;">
-        Dit zijn echte berekeningen voor een gezin met 10 zonnepanelen, enkeltarief en een 10 kWh batterij. <strong>Geen gemiddelden, exacte cijfers</strong> op basis van hun jaarafrekening.
-      </p>
-    </div>
-    <div class="mockup-frame">
-      <div class="mockup-topbar">
-        <div class="mockup-dot"></div>
-        <div class="mockup-dot"></div>
-        <div class="mockup-dot"></div>
-        <div class="mockup-url">app.ecometric.nl - Stap 5 · Resultaten</div>
-      </div>
-      <div class="mockup-saving">
-        <div class="mockup-saving-label">
-          <strong>Besparing per jaar</strong>
-          Saldering kost €440/jr extra, batterij compenseert €374/jr
-        </div>
-        <div class="mockup-saving-val">€374</div>
-      </div>
-      <div class="mockup-table">
-        <div class="mockup-row header">
-          <span>Scenario</span><span>Enkel</span><span>Dag/Nacht</span><span>Dynamisch</span>
-        </div>
-        <div class="mockup-row data">
-          <span>Huidige situatie</span><span>€577</span><span>€538</span><span>€564</span>
-        </div>
-        <div class="mockup-row data">
-          <span>Zonder batterij</span><span>€1017</span><span>€918</span><span>€984</span>
-        </div>
-        <div class="mockup-row data">
-          <span>Met batterij</span><span>€643</span><span class="hl">€595</span><span>€627</span>
-        </div>
       </div>
     </div>
   </div>
