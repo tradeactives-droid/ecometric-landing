@@ -455,9 +455,8 @@
       font-weight: 500;
     }
     .problem-inner {
-      max-width: 1200px; margin: 0 auto;
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 100px; align-items: center;
+      max-width: 720px;
+      margin: 0 auto;
     }
     .section-overline {
       font-size: 0.72rem; font-weight: 600;
@@ -476,35 +475,6 @@
     }
     .section-body strong { color: var(--white); font-weight: 500; }
     .section-body p + p { margin-top: 16px; }
-    .problem-cards {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-    .problem-card {
-      background: var(--bg-light);
-      border: 1px solid rgba(12,14,18,0.1);
-      border-radius: 16px; padding: 28px 24px;
-      position: relative; overflow: hidden;
-      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-    }
-    .problem-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 32px rgba(0,0,0,0.08);
-      border-color: rgba(232,98,42,0.35);
-    }
-    .problem-card::before {
-      content: '';
-      position: absolute; top: 0; left: 0; right: 0; height: 2px;
-      background: linear-gradient(90deg, var(--accent), transparent);
-    }
-    .problem-card-num {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 3rem; letter-spacing: 0.02em;
-      color: var(--accent); line-height: 1; margin-bottom: 8px;
-    }
-    .problem-card-label {
-      font-size: 0.82rem; color: rgba(12,14,18,0.55); line-height: 1.4;
-    }
 
     /* -- HOW -- */
     .how {
@@ -587,33 +557,6 @@
       font-size: 0.72rem; color: var(--muted);
       margin-left: 8px;
     }
-    .mockup-tiles {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 10px; margin-bottom: 14px;
-    }
-    .mockup-tile {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid var(--border);
-      border-radius: 12px; padding: 16px 14px;
-    }
-    .mockup-tile-title {
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: rgba(255,255,255,0.85);
-      margin-bottom: 4px;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-    .mockup-tile-label {
-      font-size: 0.65rem; color: var(--muted);
-      margin-bottom: 12px; line-height: 1.3;
-    }
-    .mockup-tile-val {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.6rem; letter-spacing: 0.02em;
-    }
-    .mockup-tile-val.red { color: #ff6b6b; }
-    .mockup-tile-val.green { color: var(--green); }
     .mockup-saving {
       background: #166534;
       border: 1px solid rgba(255,255,255,0.15);
@@ -856,7 +799,6 @@
       }
       .hero-stat { flex: 1; min-width: 140px; }
       .problem { padding: 80px 24px; }
-      .problem-inner { grid-template-columns: 1fr; gap: 48px; }
       .how { padding: 80px 24px; }
       .how-steps { grid-template-columns: 1fr; }
       .mockup-section { padding: 80px 24px; }
@@ -1107,24 +1049,6 @@
         <p>EcoMetric maakt het tastbaar: in 5 minuten een volledige analyse op maat, ter plekke in het gesprek.</p>
       </div>
     </div>
-    <div class="problem-cards">
-      <div class="problem-card">
-        <div class="problem-card-num">€440</div>
-        <div class="problem-card-label">extra jaarkost die uw klant betaalt als u niks doet</div>
-      </div>
-      <div class="problem-card">
-        <div class="problem-card-num">1 op 3</div>
-        <div class="problem-card-label">huishoudens met zonnepanelen weet het nog niet</div>
-      </div>
-      <div class="problem-card">
-        <div class="problem-card-num">€0</div>
-        <div class="problem-card-label">verkoopargument zonder concrete cijfers voor die klant</div>
-      </div>
-      <div class="problem-card">
-        <div class="problem-card-num">+20–40%</div>
-        <div class="problem-card-label">hogere sluitkans met data in het gesprek</div>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -1144,23 +1068,6 @@
         <div class="mockup-dot"></div>
         <div class="mockup-dot"></div>
         <div class="mockup-url">app.ecometric.nl - Stap 5 · Resultaten</div>
-      </div>
-      <div class="mockup-tiles">
-        <div class="mockup-tile">
-          <div class="mockup-tile-title">Huidige situatie</div>
-          <div class="mockup-tile-label">Met saldering</div>
-          <div class="mockup-tile-val">€577</div>
-        </div>
-        <div class="mockup-tile">
-          <div class="mockup-tile-title">Toekomst zonder saldering</div>
-          <div class="mockup-tile-label">Zonder batterij</div>
-          <div class="mockup-tile-val red">€1.017</div>
-        </div>
-        <div class="mockup-tile">
-          <div class="mockup-tile-title">Toekomst zonder saldering</div>
-          <div class="mockup-tile-label">Met batterij</div>
-          <div class="mockup-tile-val green">€643</div>
-        </div>
       </div>
       <div class="mockup-saving">
         <div class="mockup-saving-label">
